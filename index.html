@@ -37,16 +37,6 @@
       font-size: 1.1rem;
       color: #ccc;
     }
-
-    /* Fully hidden element */
-    #flag {
-      position: absolute;
-      left: -9999px;
-      top: -9999px;
-      opacity: 0;
-      pointer-events: none;
-      user-select: none;
-    }
   </style>
 </head>
 <body>
@@ -58,8 +48,14 @@
     <p><em>💡 Hint: Check the CSP settings in the page source.</em></p>
   </div>
 
-  <!-- 🕵️ Hidden Flag -->
-  <div id="flag">FLAG{44tryu78xccf}</div>
+  <!-- Hidden Flag Injected by JS -->
+  <script>
+    // Only accessible by attackers who know how to run JavaScript
+    const flag = "FLAG{45rtdehyuu77c}";
+    window.getFlag = function() {
+      alert(flag);  // Reveal the flag in an alert
+    }
+  </script>
 
 </body>
 </html>
