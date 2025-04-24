@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSP Misconfiguration Challenge</title>
+
+  <!-- BAD CSP: Misconfigured on purpose -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://trusted.cdn.com;">
+
+</head>
+<body style="margin:0; font-family:Arial, sans-serif; background-color:#1e1e2f; color:#ffffff; display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; text-align:center;">
+
+  <div style="background-color:#2e2e4d; padding:30px 50px; border-radius:16px; box-shadow:0 0 20px rgba(0,0,0,0.5); max-width:600px;">
+    <h1 style="font-size:2.5rem; color:#f7ca18; margin-bottom:0.5em;">CSP Misconfiguration</h1>
+    <p style="font-size:1.1rem; color:#dddddd;">This site claims to protect itself with a Content Security Policy... but someone didn’t configure it properly. Can you break through and find the flag?</p>
+    <p style="font-size:0.95rem; color:#999;">💡 Hint: Check the CSP settings in the page source.</p>
+  </div>
+
+  <!-- Fake JS include -->
+  <script src="https://trusted.cdn.com/harmless.js"></script>
+
+  <!-- Hidden flag -->
+  <div id="flag" style="display:none;">flag{csp_misconfig_4ll0w3d_me}</div>
+
+</body>
+</html>
