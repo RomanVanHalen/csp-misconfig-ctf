@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CSP Misconfiguration Challenge</title>
 
-  <!-- BAD CSP: Misconfigured on purpose -->
+  <!-- Intentional CSP Misconfiguration -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://trusted.cdn.com;">
 
 </head>
@@ -17,11 +17,13 @@
     <p style="font-size:0.95rem; color:#999;">💡 Hint: Check the CSP settings in the page source.</p>
   </div>
 
-  <!-- Fake JS include -->
+  <!-- Fake external JS -->
   <script src="https://trusted.cdn.com/harmless.js"></script>
 
-  <!-- Hidden flag -->
-  <div id="flag" style="display:none;">flag{csp_misconfig_4ll0w3d_me}</div>
+  <!-- 🕵️‍♂️ Hidden flag -->
+  <div id="flag" style="display:none; visibility:hidden; height:0; overflow:hidden;">
+    flag{csp_misconfig_4ll0w3d_me}
+  </div>
 
 </body>
 </html>
