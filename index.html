@@ -3,93 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSP Misconfiguration | Hacker Terminal</title>
+  <title>CSP Misconfiguration - Hacker Terminal</title>
 
   <!-- Vulnerable CSP -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://trusted.cdn.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
 
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
   <style>
     body {
-      background-color: #000000;
-      color: #00ff00;
-      font-family: 'Share Tech Mono', monospace;
       margin: 0;
-      padding: 20px;
-      height: 100vh;
-      overflow: hidden;
+      padding: 0;
+      background: #000000;
+      color: #00ff00;
+      font-family: 'VT323', monospace;
+      font-size: 22px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-image: radial-gradient(circle, #000000 0%, #0f0f0f 100%);
-      animation: flicker 1.5s infinite alternate;
-    }
-
-    @keyframes flicker {
-      0% { opacity: 1; }
-      100% { opacity: 0.95; }
+      min-height: 100vh;
+      overflow: hidden;
+      background-image: radial-gradient(circle, #000000 0%, #0a0a0a 100%);
     }
 
     .terminal {
       background-color: #000000;
       border: 2px solid #00ff00;
-      box-shadow: 0 0 20px #00ff00;
+      box-shadow: 0 0 20px #00ff00, inset 0 0 10px #00ff00;
       padding: 30px;
       border-radius: 10px;
-      width: 80%;
-      max-width: 800px;
+      max-width: 900px;
+      width: 90%;
       text-align: left;
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-
-    .terminal::before {
-      content: "root@ctf-challenge:~$ ";
-      color: #00ff00;
+      white-space: pre-wrap;
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
       color: #00ff00;
       text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
     }
 
-    .hint {
-      margin-top: 20px;
-      color: #66ff66;
-      font-style: italic;
-      font-size: 1rem;
-    }
-
-    /* optional: blinking cursor */
     .cursor {
       display: inline-block;
       width: 10px;
       background-color: #00ff00;
-      animation: blink 1s infinite;
       margin-left: 5px;
+      animation: blink 1s step-start infinite;
     }
 
     @keyframes blink {
-      0%, 50% { opacity: 1; }
-      51%, 100% { opacity: 0; }
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hint {
+      margin-top: 20px;
+      color: #55ff55;
+      font-size: 18px;
+      font-style: italic;
     }
   </style>
 </head>
-
 <body>
 
-  <h1>CSP Misconfiguration Terminal</h1>
+  <h1>💻 Hacker Terminal 💻</h1>
 
   <div class="terminal">
-    <p>Welcome agent,</p>
-    <p>This system claims to have a bulletproof Content Security Policy...</p>
-    <p>Your mission: <strong>Find the hidden flag</strong> hidden somewhere in the code or files.</p>
-    <p class="hint">Hint: Check loaded scripts and understand the allowed sources in the CSP!</p>
-    <div class="cursor"></div>
+Welcome to the secure server.
+
+Analyzing CSP Headers...
+...
+Potential Misconfiguration Detected!
+
+Mission: Find the hidden FLAG hidden somewhere in this system.
+
+Tip: Investigate loaded resources and source code carefully.
+
+root@ctf:~# <span class="cursor"></span>
   </div>
 
   <script src="flag.js"></script>
