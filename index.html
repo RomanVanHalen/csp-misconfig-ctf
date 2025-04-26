@@ -8,34 +8,45 @@
   <!-- Vulnerable CSP -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://trusted.cdn.com;">
 
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
+      font-family: 'Fira Code', monospace;
+      background-color: #0d0d0d;
+      color: #33ff33;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       text-align: center;
+      background-image: radial-gradient(circle, #0d0d0d 0%, #1a1a1a 100%);
     }
     .container {
-      background-color: #1e1e2f;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-      max-width: 600px;
+      background-color: #141414;
+      padding: 50px;
+      border: 1px solid #33ff33;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #33ff33;
+      max-width: 700px;
     }
     h1 {
-      font-size: 2.5rem;
-      color: #ffcc00;
+      font-size: 2.8rem;
+      color: #00ff00;
+      margin-bottom: 20px;
     }
     p {
-      font-size: 1.1rem;
-      color: #ccc;
+      font-size: 1.2rem;
+      color: #aaffaa;
+      margin-bottom: 10px;
+    }
+    .hint {
+      margin-top: 30px;
+      font-style: italic;
+      color: #77ff77;
     }
   </style>
 </head>
@@ -43,19 +54,13 @@
 
   <div class="container">
     <h1>CSP Misconfiguration</h1>
-    <p>This site claims to protect itself with a Content Security Policy...</p>
-    <p>But someone didn’t configure it properly. Can you find the flag?</p>
-    <p><em>💡 Hint: Check the CSP settings in the page source.</em></p>
+    <p>This website claims it has locked everything down tight...</p>
+    <p>But did it really? Find the hidden flag!</p>
+    <p class="hint">💡 Hint: CSP rules and page resources are your friends.</p>
   </div>
 
-  <!-- Hidden Flag Injected by JS -->
-  <script>
-    // Only accessible by attackers who know how to run JavaScript
-    const flag = "FLAG{45rtdehyuu77c}";
-    window.getFlag = function() {
-      alert(flag);  // Reveal the flag in an alert
-    }
-  </script>
+  <!-- Load the external JavaScript with the flag -->
+  <script src="flag.js"></script>
 
 </body>
 </html>
