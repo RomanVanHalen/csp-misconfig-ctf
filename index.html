@@ -2,84 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline' 'self'; script-src 'self' 'unsafe-inline';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hacker Terminal | CSP Challenge</title>
+  <title>CTF Challenge</title>
 
   <style>
-    /* Hacker Style */
     body {
-      margin: 0;
-      padding: 0;
       background-color: black;
       color: #00ff00;
       font-family: monospace;
       font-size: 20px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-shadow: 0 0 5px #00ff00;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      background: black;
+      padding: 20px;
+      border: 2px solid #00ff00;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff00;
     }
 
     h1 {
-      margin-bottom: 20px;
       text-align: center;
       font-size: 2.5em;
-      text-shadow: 0 0 8px #00ff00;
+      text-shadow: 0 0 5px #00ff00;
+      margin-bottom: 30px;
     }
 
-    .terminal {
-      background-color: black;
-      border: 2px solid #00ff00;
-      padding: 20px;
-      width: 80%;
-      max-width: 800px;
-      box-shadow: 0 0 20px #00ff00;
-      border-radius: 10px;
-      text-align: left;
-      white-space: pre-wrap;
-    }
-
-    .hint {
-      margin-top: 20px;
-      font-style: italic;
-      color: #66ff66;
-      font-size: 18px;
-    }
-
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      height: 20px;
-      background-color: #00ff00;
-      margin-left: 5px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
+    p {
+      line-height: 1.5;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>💻 Hacker Terminal 💻</h1>
+  <div class="content">
+    <h1>Hacker Mode Activated</h1>
 
-  <div class="terminal">
-Welcome to the Secure CTF Server.
+    <p>Welcome to the secure server.</p>
+    <p>Analyzing CSP headers...</p>
+    <p>Potential misconfiguration detected!</p>
 
-Analyzing CSP Headers...
-...
-Potential Misconfiguration Detected!
-
-Mission: Locate the FLAG hidden inside the system files.
-
-root@ctf:~#<span class="cursor"></span>
+    <p><strong>Mission:</strong> Find the hidden FLAG inside the system.</p>
   </div>
 
   <script src="flag.js"></script>
